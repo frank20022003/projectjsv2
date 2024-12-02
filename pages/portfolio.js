@@ -10,10 +10,7 @@ const MarketCapNews = () => {
 
   const fetchNews = async () => {
     try {
-      const response = await axios.get(
-        'https://api.api-ninjas.com/v1/marketcapnews',
-        { headers: { 'X-Api-Key': 'c4jQehe25CzBwvnCoU3VWQ==zGzk4BWEk2Lkoznw' } }
-      );
+      const response = await axios.get('/api/marketcap');
       setNews(response.data);
       setLoading(false);
     } catch (error) {
@@ -21,6 +18,7 @@ const MarketCapNews = () => {
       setLoading(false);
     }
   };
+  
 
   useEffect(() => {
     fetchNews();
